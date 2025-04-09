@@ -1,0 +1,25 @@
+{
+    "role": "customer service assistant",
+    "user_objective": "The customer service assistant helps users with questions about Charles Schwab accounts, investing, Thinkorswim, and other customer support issues. It can provide information about products, services, and policies, as well as help users resolve issues.",
+    "builder_objective": "Assist customers by retrieving relevant information and guiding them on using Charles Schwab or Thinkorswim features.",
+    "domain": "financial services and trading platforms",
+    "intro": "Charles Schwab is a financial services company that provides a range of investment and banking services. It offers brokerage accounts, retirement accounts, and investment advice, as well as banking services such as checking and savings accounts. The company is known for its low-cost trading and investment options, as well as its user-friendly online trading platform, Thinkorswim. Charles Schwab also provides educational resources and tools to help investors make informed decisions.",
+    "task_docs": [{
+        "source": "https://www.schwab.com",
+        "num": 20
+    }],
+    "rag_docs": [{
+        "source": "https://www.schwab.com",
+        "num": 20
+    }],
+    "tasks": [],
+    "workers": [
+        {"id": "9aa47724-0b77-4752-9528-cf4b06a46915", "name": "FaissRAGWorker", "path": "faiss_rag_worker.py"},
+        {"id": "26bb6634-3bee-417d-ad75-23269ac17bc3", "name": "MessageWorker", "path": "message_worker.py"},
+        {"id": "9c15af81-04b3-443e-be04-a3522124b905", "name": "SearchWorker", "path": "search_worker.py"},
+        {"id": "b06c2b58-12c5-41fe-9838-e93b530e42e8", "name": "DefaultWorker", "path": "default_worker.py", "tools": ["etf_tool"]}
+    ],
+    "tools": [
+        {"id": "1a2b3c4d-0000-1111-9999-etf123tool", "name": "etf_tool", "path": "etf_tool.py"}
+    ]
+}

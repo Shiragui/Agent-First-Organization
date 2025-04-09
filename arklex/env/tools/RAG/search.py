@@ -30,8 +30,8 @@ class SearchEngine():
     def process_search_result(self, search_results):
         search_text = ""
         for res in search_results:
-            search_text += f"Source: {res['url']} \n"
-            search_text += f"Content: {res['content']} \n\n"
+            search_text += f"Source: {res} \n"
+            search_text += f"Content: {res} \n\n"
         return search_text
 
     def search(self, state: MessageState):
